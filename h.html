@@ -695,6 +695,12 @@
       .mobile-toggle {
         display: block;
       }
+       .nav-links .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        min-width: 100%;
+      }
     }
     
     @media (max-width: 768px) {
@@ -1079,26 +1085,108 @@
     align-self: flex-end;
   }
 }
+.nav-links .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 110%;
+      right: 0;
+      background: #fff;
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(54,201,180,0.08);
+      border-radius: 12px;
+      z-index: 100;
+      padding: 10px 0;
+      border: 1px solid #e0f4f2;
+      text-align: right;
+    }
+    
+    /* .nav-links .dropdown:hover .dropdown-menu,
+    .nav-links .dropdown:focus-within .dropdown-menu {
+      display: block;
+    } */
+     .dropdown .dropdown-menu {
+  display: none;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+    
+    .nav-links .dropdown-menu li {
+      margin: 0;
+    }
+    
+    .nav-links .dropdown-menu a {
+      display: block;
+      padding: 10px 24px;
+      color: var(--dark);
+      font-size: 1rem;
+      border-radius: 0;
+      background: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    
+    .nav-links .dropdown-menu a:hover {
+      background: rgba(54,201,180,0.08);
+      color: var(--primary);
+    }
+    .nav-links .dropdown {
+      position: relative;
+    }
+     /* القائمة في الجوال */
+.nav-links.show-mobile-menu {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  z-index: 999;
+}
+
+.nav-links.show-mobile-menu li {
+  margin: 10px 0;
+}
+
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+  }
+}
 
   </style>
 </head>
 <body>
-  <!-- شريط التنقل -->
+   <!-- شريط التنقل -->
   <header>
     <div class="container nav-container">
       <div class="logo">
         <div class="logo-icon">
-          <img src="https://scontent.fbgw41-3.fna.fbcdn.net/v/t39.30808-6/399410090_122097367028107181_5887244743301273206_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=iAQ6zm_R6XQQ7kNvwFpYy29&_nc_oc=Adngp0kQSWE8oorHPUxAMznbD5XF29nOfAG6I6DKvOMjnN3AZAQ5qO8Ro3Fe4HUZ4W0&_nc_zt=23&_nc_ht=scontent.fbgw41-3.fna&_nc_gid=0GfLadiY5cS889QNR2kpIA&oh=00_AfTLYZ6ZEUWqCD74dBBkW2qZ5ZshvpNSxLXMqMQPaL5suA&oe=6871D150" alt="Logo" style="width:100%;height:100%;object-fit:cover;" />
+          <img src="https://scontent.fbgw41-3.fna.fbcdn.net/v/t39.30808-6/399410090_122097367028107181_5887244743301273206_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=iAQ6zm_R6XQQ7kNvwFpYy29&_nc_oc=Adngp0kQSWE8oorHPUxAMznbD5XF29nOfAG6I6DKvOMjnN3AZAQ5qO8Ro3Fe4HUZ4W0&_nc_zt=23&_nc_ht=scontent.fbgw41-3.fna&_nc_gid=0GfLadiY5cS889QNR2kpIA&oh=00_AfTLYZ6ZEUWqCD74dBBkW2qZ5ZshvpNSxLXMqMQPaL5suA&oe=6871D150" alt="تكنوفيجن">
         </div>
         <div class="logo-text">technovision</div>
       </div>
       
       <ul class="nav-links">
-        <li><a href="#hero">الرئيسية</a></li>
-        <li><a href="#features">الميزات</a></li>
-        <li><a href="#products">المنتجات</a></li>
-        <li><a href="#about">من نحن</a></li>
-        <li><a href="#contact">تواصل معنا</a></li>
+        <li><a href="/">الرئيسية</a></li>
+        <li class="dropdown">
+          <a href="#" class="active">الفئات <i class="fas fa-chevron-down" style="font-size:0.8em;margin-right:5px;"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="category-products.html?id=1">الإضاءة الذكية</a></li>
+            <li><a href="category-products.html?id=2">أنظمة الأمان</a></li>
+            <li><a href="category-products.html?id=3">التحكم بالمناخ</a></li>
+            <li><a href="category-products.html?id=4">المقابس الذكية</a></li>
+            <li><a href="category-products.html?id=5">المساعدات الذكية</a></li>
+          </ul>
+        </li>
+        <li><a href="products.html">المنتجات</a></li>
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
       </ul>
       
       <div class="nav-buttons">
@@ -1191,47 +1279,7 @@
   </section>
 
 
-
- <!-- قسم المقالات -->
-<section id="articles" class="articles">
-  <div class="container">
-    <div class="section-title scroll-animation">
-      <h2>المقالات والتقنيات</h2>
-      <p>اكتشف أحدث المقالات حول تقنيات المنزل الذكي</p>
-    </div>
-    
-    <div class="article-card scroll-animation">
-      <div class="article-image">
-        <img src="https://scontent.fbgw41-4.fna.fbcdn.net/v/t39.30808-6/467657330_17893441284099234_6821839176229402678_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=htjMXTx1YxYQ7kNvwHrvQ4z&_nc_oc=AdkKiwPCMAgP0ukV6_L_Ce7gzGqrof7I53Dg1NIvLQDcLeMXGxWGuVUQz4xxs1Oluao&_nc_zt=23&_nc_ht=scontent.fbgw41-4.fna&_nc_gid=qT4Bk4LI-a_6njx3Mukn6w&oh=00_AfTbs4QzwnzBO5kMQ-GC4wpOmEVicz5EqFPOgovf3hLsUg&oe=68730958" alt="المنزل الذكي">
-      </div>
-      <div class="article-content">
-        <h3>كيف تحول منزلك إلى منزل ذكي خطوة بخطوة</h3>
-        <div class="article-meta">
-          <span class="date"><i class="far fa-calendar-alt"></i> 15 مايو 2023</span>
-          <span class="author"><i class="far fa-user"></i> فريق تكنوفيجن</span>
-        </div>
-        <p class="article-excerpt">
-          مع التطور التكنولوجي المتسارع، أصبحت المنازل الذكية حقيقة وليست خيالاً. في هذه المقالة سنستعرض كيفية تحويل منزلك التقليدي إلى منزل ذكي متكامل باستخدام أحدث الأجهزة والتقنيات. بدءاً من أنظمة الإضاءة الذكية التي يمكن التحكم بها عن بعد، وصولاً إلى أنظمة الأمان المتطورة التي توفر حماية شاملة لأسرتك وممتلكاتك.
-        </p>
-        <div class="article-highlights">
-          <h4>أهم النقاط:</h4>
-          <ul>
-            <li>مقدمة عن مفهوم المنزل الذكي وفوائده</li>
-            <li>أهم الأجهزة الأساسية لبدء التحول الذكي</li>
-            <li>كيفية اختيار النظام المركزي المناسب</li>
-            <li>نصائح لتحقيق التكامل بين الأجهزة المختلفة</li>
-            <li>توفير الطاقة وكفاءة الاستهلاك</li>
-          </ul>
-        </div>
-        <a href="#" class="btn btn-primary">قراءة المزيد</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- قسم الفئات مع التمرير الأفقي -->
+  <!-- قسم الفئات مع التمرير الأفقي -->
 <section id="categories" class="categories">
   <div class="container">
     <div class="section-title">
@@ -1318,6 +1366,50 @@
     </div>
   </div>
 </section>
+
+
+
+
+
+ <!-- قسم المقالات -->
+<section id="articles" class="articles">
+  <div class="container">
+    <div class="section-title scroll-animation">
+      <h2>المقالات والتقنيات</h2>
+      <p>اكتشف أحدث المقالات حول تقنيات المنزل الذكي</p>
+    </div>
+    
+    <div class="article-card scroll-animation">
+      <div class="article-image">
+        <img src="https://scontent.fbgw41-4.fna.fbcdn.net/v/t39.30808-6/467657330_17893441284099234_6821839176229402678_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=htjMXTx1YxYQ7kNvwHrvQ4z&_nc_oc=AdkKiwPCMAgP0ukV6_L_Ce7gzGqrof7I53Dg1NIvLQDcLeMXGxWGuVUQz4xxs1Oluao&_nc_zt=23&_nc_ht=scontent.fbgw41-4.fna&_nc_gid=qT4Bk4LI-a_6njx3Mukn6w&oh=00_AfTbs4QzwnzBO5kMQ-GC4wpOmEVicz5EqFPOgovf3hLsUg&oe=68730958" alt="المنزل الذكي">
+      </div>
+      <div class="article-content">
+        <h3>كيف تحول منزلك إلى منزل ذكي خطوة بخطوة</h3>
+        <div class="article-meta">
+          <span class="date"><i class="far fa-calendar-alt"></i> 15 مايو 2023</span>
+          <span class="author"><i class="far fa-user"></i> فريق تكنوفيجن</span>
+        </div>
+        <p class="article-excerpt">
+          مع التطور التكنولوجي المتسارع، أصبحت المنازل الذكية حقيقة وليست خيالاً. في هذه المقالة سنستعرض كيفية تحويل منزلك التقليدي إلى منزل ذكي متكامل باستخدام أحدث الأجهزة والتقنيات. بدءاً من أنظمة الإضاءة الذكية التي يمكن التحكم بها عن بعد، وصولاً إلى أنظمة الأمان المتطورة التي توفر حماية شاملة لأسرتك وممتلكاتك.
+        </p>
+        <div class="article-highlights">
+          <h4>أهم النقاط:</h4>
+          <ul>
+            <li>مقدمة عن مفهوم المنزل الذكي وفوائده</li>
+            <li>أهم الأجهزة الأساسية لبدء التحول الذكي</li>
+            <li>كيفية اختيار النظام المركزي المناسب</li>
+            <li>نصائح لتحقيق التكامل بين الأجهزة المختلفة</li>
+            <li>توفير الطاقة وكفاءة الاستهلاك</li>
+          </ul>
+        </div>
+        <a href="#" class="btn btn-primary">قراءة المزيد</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 
   <!-- قسم المنتجات -->
@@ -1419,17 +1511,44 @@
     </div>
   </section>
 
-  <!-- القسم الإخباري -->
-  <section class="newsletter">
-    <div class="container">
-      <h2 class="scroll-animation">اشترك في نشرتنا الإخبارية</h2>
-      <p class="scroll-animation">كن أول من يعرف عن أحدث المنتجات والعروض الخاصة بنا</p>
-      <div class="newsletter-form scroll-animation">
-        <input type="email" placeholder="أدخل بريدك الإلكتروني">
-        <button>اشتراك</button>
+
+  <!-- عن الشركة -->
+ <section id="articles" class="articles">
+  <div class="container">
+    <div class="section-title scroll-animation">
+      <h2>عن الشركة</h2>
+      <p></p>
+    </div>
+    
+    <div class="article-card scroll-animation">
+      <div class="article-image">
+        <img src="https://scontent.fbgw41-4.fna.fbcdn.net/v/t39.30808-6/468013059_17893440270099234_8099917530093081760_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=I64VaYNRKiYQ7kNvwFZxy1f&_nc_oc=Admee69g6hj8-J7AbBr6BiLD-MmV5vavJXuH47cJ0Ll5-JEgQvuCQAMId9DPgDn8NmU&_nc_zt=23&_nc_ht=scontent.fbgw41-4.fna&_nc_gid=JJR5c6_QSMeApaOE1RiZJA&oh=00_AfQ8FE4Z2P_pgw-nmKpCSvWLyhWSHRdrhc41pqGMWT-dLA&oe=687326EB" alt="المنزل الذكي">
+      </div>
+      <div class="article-content">
+        <h3>TECHNOVISON || تكنو فيشن</h3>
+        <div class="article-meta">
+          <span class="author"><i class="far fa-user"></i> فريق تكنوفيجن</span>
+        </div>
+        <p class="article-excerpt">
+         تكنوفيجن هي شركة متخصصة في تقديم أحدث حلول المنازل الذكية، وأنظمة الصوت، وكشف الحرائق، والحساسات الذكية، بالإضافة إلى كل ما يتعلق بتقنيات إنترنت الأشياء (IoT). نوفر لعملائنا منتجات عالية الجودة وتجارب متكاملة للتحكم الذكي والآمن في منازلهم ومؤسساتهم.
+
+
+        </p>
+        <div class="article-highlights">
+          <h4>أهم النقاط:</h4>
+          <ul>
+            <li>نوفر حلولًا متكاملة للتحكم الذكي بالإضاءة، الأبواب، الستائر، ودرجات الحرارة، بضغطة زر ومن خلال الهاتف.</li>
+            <li>نوفر حساسات الحركة، أنظمة كشف الحريق، الإنذارات الذكية، والكاميرات لراحة بالك وأمان منزلك.</li>
+            <li>نقدم منظومات صوت داخلية وخارجية عالية الجودة، بتقنيات بلوتوث وWi-Fi، لأسلوب حياة فاخر.</li>
+            <li>ندمج التكنولوجيا في تفاصيل حياتك اليومية، من خلال ربط الأجهزة والتحكم بها عن بُعد.</li>
+            <li>نعمل داخل العراق لتقديم أفضل المنتجات والخدمات الذكية، مع دعم فني موثوق وخدمة تركيب احترافية.</li>
+          </ul>
+        </div>
+        <a href="#" class="btn btn-primary">قراءة المزيد</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- التذييل -->
   <footer>
@@ -1473,11 +1592,11 @@
           <ul class="contact-info">
             <li>
               <i class="fas fa-map-marker-alt"></i>
-              <span>بغداد، المنصور، شارع الصناعة</span>
+              <span>بغداد، الجادرية</span>
             </li>
             <li>
               <i class="fas fa-phone"></i>
-              <span>+964 780 123 4567</span>
+              <span>07722762286</span>
             </li>
             <li>
               <i class="fas fa-envelope"></i>
@@ -1580,6 +1699,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+</script>
+<script>
+  const toggleBtn = document.querySelector('.mobile-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('show-mobile-menu');
+  });
+  const dropdownToggle = document.querySelector('.nav-links .dropdown > a');
+  const dropdownParent = document.querySelector('.nav-links .dropdown');
+
+  dropdownToggle.addEventListener('click', function(e) {
+    e.preventDefault(); // منع الانتقال للرابط
+    dropdownParent.classList.toggle('open');
+  });
 </script>
 </body>
 </html>
