@@ -1008,7 +1008,7 @@ header {
 /* السلايدر الرئيسي */
 .container2 {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   max-width: 100%;
@@ -1032,6 +1032,7 @@ header {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   max-width: 100%;
+  touch-action: pan-y; /* تحسين التحكم باللمس */
 }
 
 .slider2::-webkit-scrollbar {
@@ -1045,6 +1046,7 @@ header {
   object-fit: cover;
   scroll-snap-align: center;
   display: block;
+  pointer-events: none; /* منع التفاعلات مع الصورة لتحسين التمرير */
 }
 
 /* نقاط التنقل */
@@ -1072,36 +1074,50 @@ header {
   background: white;
 }
 
-/* الهواتف */
+/* هواتف أفقية وأجهزة لوحية صغيرة */
+@media (max-width: 1024px) {
+  .container2 {
+    height: 60vh;
+  }
+}
+
+/* الهواتف العمودية */
 @media (max-width: 768px) {
-  /* .container2 {
-    height: 50vh; /* يمكن تعديل الارتفاع حسب الحاجة */
-  
+  .container2 {
+    height: 50vh;
+  }
   
   .slider2 {
-    -webkit-overflow-scrolling: touch; /* لسلاسة التمرير على iOS */
+    scroll-snap-type: x mandatory;
   }
   
-  .slider2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   .slider-nav a {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
 }
 
 /* هواتف صغيرة جدًا */
 @media (max-width: 480px) {
-  /* .container2 {
-    height: 40vh; /* يمكن تعديل الارتفاع حسب الحاجة */
-  
+  .container2 {
+    height: 45vh;
+  }
   
   .slider-nav {
-    bottom: 10px;
+    bottom: 15px;
+  }
+  
+  .slider-nav a {
+    width: 8px;
+    height: 8px;
+    gap: 6px;
+  }
+}
+
+/* هواتف ذات شاشات قصيرة جدًا */
+@media (max-height: 600px) and (max-width: 480px) {
+  .container2 {
+    height: 55vh;
   }
 }
 
