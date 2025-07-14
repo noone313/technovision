@@ -311,7 +311,7 @@ header {
     
     .features {
       padding: 80px 0;
-      background: white;
+  background: linear-gradient(135deg, rgba(54, 201, 180, 0.1), rgba(255, 255, 255, 0.3));
     }
     
     .section-title {
@@ -798,8 +798,8 @@ header {
      /* إضافة أنماط قسم الشركاء */
     .partners {
       padding: 80px 0;
-      background: linear-gradient(135deg, #ffffff, #f0f9f8);
-    }
+background: white;    
+}
     
     .partners-slider {
       display: flex;
@@ -841,7 +841,7 @@ header {
       transition: none !important;
       border-radius: 0 !important;
       box-shadow: none !important;
-      background: none !important;
+background: white;
       padding: 0 !important;
       margin: 0 !important;
       display: block;
@@ -873,7 +873,10 @@ header {
   right: 0;
   left: 0;
   bottom: 0;
-  background: #fff;
+   background: rgba(255, 255, 255, 0.3); /* تقليل الشفافية */
+  backdrop-filter: blur(10px);          /* تأثير ضبابي خلف النص */
+  -webkit-backdrop-filter: blur(10px);  /* دعم سفاري */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف */
   width: 100vw; /* عرض كامل للشاشة */
   height: calc(100vh - 80px); /* ارتفاع كامل للشاشة مع استثناء الشريط العلوي */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -988,7 +991,10 @@ header {
   position: absolute;
   top: 100%;
   right: 0;
-  background: #fff;
+   background: rgba(255, 255, 255, 0.3); /* تقليل الشفافية */
+  backdrop-filter: blur(10px);          /* تأثير ضبابي خلف النص */
+  -webkit-backdrop-filter: blur(10px);  /* دعم سفاري */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف */
   min-width: 220px;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -1038,6 +1044,11 @@ header {
     padding-right: 20px;
   }
 }
+
+
+
+
+
      /* القائمة في الجوال */
 .nav-links.show-mobile-menu {
   display: flex !important;
@@ -1288,7 +1299,7 @@ header {
 /* قسم أعمال الشركة */
 .portfolio {
   padding: 80px 0;
-  background: linear-gradient(135deg, #f8fafc, #f0f9f8);
+  background: white;
 }
 
 
@@ -1363,7 +1374,7 @@ header {
 /* قسم الأنظمة المتكاملة */
 .solutions {
   padding: 80px 0;
-  background: white;
+  background: linear-gradient(135deg, rgba(54, 201, 180, 0.1), rgba(255, 255, 255, 0.3));
 }
 
 .solutions-tabs {
@@ -1808,7 +1819,10 @@ header {
   top: 100%;
   left: 0;
   right: 0;
-  background: #fff;
+   background: rgba(255, 255, 255, 0.3); /* تقليل الشفافية */
+  backdrop-filter: blur(10px);          /* تأثير ضبابي خلف النص */
+  -webkit-backdrop-filter: blur(10px);  /* دعم سفاري */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف */
   min-width: 100%;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -1865,7 +1879,7 @@ header {
       </div>
       
  <ul class="nav-links">
-  <li><a href="h.html"></i> الرئيسية</a></li>
+  <li><a href="/"></i> الرئيسية</a></li>
   <li class="dropdown">
     <a href="/products" class="active"></i> الحلول <i class="fas fa-chevron-down dropdown-icon"></i></a>
     <ul class="dropdown-menu">
@@ -1888,9 +1902,9 @@ header {
       </li>
     </ul>
   </li>
-  <li><a href="products.html"> منتجاتنا</a></li>
-  <li><a href="aboutUs.html"> من نحن</a></li>
-  <li><a href="contactUs.html"> تواصل معنا</a></li>
+  <li><a href="/products"> منتجاتنا</a></li>
+  <li><a href="/about-us"> من نحن</a></li>
+  <li><a href="/contact-us"> تواصل معنا</a></li>
 </ul>
       
       <div class="nav-buttons">
@@ -1914,9 +1928,9 @@ header {
     <button class="slider-arrow next-arrow">&#10094;</button>
     
     <div class="slider2">
-      <img id="slide-3" src="./uploads/Banner.jpg" alt="3D rendering of an imaginary blue planet in space" />
-      <img id="slide-1" src="./uploads/Banner(1).jpg" alt="3D rendering of an imaginary orange planet in space" />
-      <img id="slide-2" src="./uploads/A_VIVA_header3.jpg" alt="3D rendering of an imaginary green planet in space" />
+      <img id="slide-3" src="../uploads/Banner.jpg" alt="3D rendering of an imaginary blue planet in space" />
+      <img id="slide-1" src="../uploads/Banner(1).jpg" alt="3D rendering of an imaginary orange planet in space" />
+      <img id="slide-2" src="../uploads/A_VIVA_header3.jpg" alt="3D rendering of an imaginary green planet in space" />
     </div>
     
     <div class="slider-nav">
